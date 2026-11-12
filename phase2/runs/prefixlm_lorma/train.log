@@ -1,0 +1,46 @@
+labels 12 | scheme BIO -> 25 tags | gold end is exclusive (8393 exclusive / 0 inclusive / 0 neither)
+train docs 63 | val docs 7 | test docs 35
+parameters: total 112.31M | trainable 2.673M (2.38%)
+train windows 1101 (window 512, stride 384) | overlapping gold entities not representable: 0
+epoch 1 | train_loss 0.7399 | minutes 0.5616 | val_macro_f1 0.2302 | val_macro_p 0.2072 | val_macro_r 0.2765
+  best so far (epoch 1)
+epoch 2 | train_loss 0.1095 | minutes 1.2166 | val_macro_f1 0.3133 | val_macro_p 0.2629 | val_macro_r 0.4155
+  best so far (epoch 2)
+epoch 3 | train_loss 0.0746 | minutes 1.8430 | val_macro_f1 0.3495 | val_macro_p 0.3138 | val_macro_r 0.4206
+  best so far (epoch 3)
+epoch 4 | train_loss 0.0456 | minutes 2.4756 | val_macro_f1 0.3568 | val_macro_p 0.3214 | val_macro_r 0.4068
+  best so far (epoch 4)
+epoch 5 | train_loss 0.0310 | minutes 3.1094 | val_macro_f1 0.3864 | val_macro_p 0.3463 | val_macro_r 0.4534
+  best so far (epoch 5)
+epoch 6 | train_loss 0.0191 | minutes 3.7118 | val_macro_f1 0.4101 | val_macro_p 0.3687 | val_macro_r 0.4798
+  best so far (epoch 6)
+epoch 7 | train_loss 0.0103 | minutes 4.3074 | val_macro_f1 0.3960 | val_macro_p 0.3521 | val_macro_r 0.4711
+epoch 8 | train_loss 0.0057 | minutes 4.9540 | val_macro_f1 0.4201 | val_macro_p 0.3994 | val_macro_r 0.4490
+  best so far (epoch 8)
+epoch 9 | train_loss 0.0023 | minutes 5.5782 | val_macro_f1 0.4289 | val_macro_p 0.3940 | val_macro_r 0.4835
+  best so far (epoch 9)
+epoch 10 | train_loss 0.0013 | minutes 6.2035 | val_macro_f1 0.4367 | val_macro_p 0.4074 | val_macro_r 0.4805
+  best so far (epoch 10)
+epoch 11 | train_loss 0.0006 | minutes 6.8313 | val_macro_f1 0.4345 | val_macro_p 0.3986 | val_macro_r 0.4876
+epoch 12 | train_loss 0.0003 | minutes 7.4491 | val_macro_f1 0.4377 | val_macro_p 0.4064 | val_macro_r 0.4862
+  best so far (epoch 12)
+epoch 13 | train_loss 0.0003 | minutes 8.0681 | val_macro_f1 0.4321 | val_macro_p 0.4003 | val_macro_r 0.4814
+epoch 14 | train_loss 0.0002 | minutes 8.6872 | val_macro_f1 0.4364 | val_macro_p 0.4041 | val_macro_r 0.4885
+epoch 15 | train_loss 0.0002 | minutes 9.3085 | val_macro_f1 0.4359 | val_macro_p 0.4031 | val_macro_r 0.4885
+BEST checkpoint on validation:
+strict macro-F1 0.4377 (over labels present: 0.4377) | macro-P 0.4064 | macro-R 0.4862
+  APP        F1 0.024  P 0.020  R 0.028  (tp 1, fp 48, fn 35, support 36)
+  RESP       F1 0.149  P 0.139  R 0.161  (tp 5, fp 31, fn 26, support 31)
+  A.COUNSEL  F1 0.286  P 0.333  R 0.250  (tp 4, fp 8, fn 12, support 16)
+  R.COUNSEL  F1 0.500  P 0.400  R 0.667  (tp 10, fp 15, fn 5, support 15)
+  JUDGE      F1 0.773  P 0.708  R 0.850  (tp 17, fp 7, fn 3, support 20)
+  WIT        F1 0.103  P 0.097  R 0.111  (tp 3, fp 28, fn 24, support 27)
+  AUTH       F1 0.405  P 0.369  R 0.449  (tp 31, fp 53, fn 38, support 69)
+  COURT      F1 0.834  P 0.782  R 0.894  (tp 93, fp 26, fn 11, support 104)
+  STAT       F1 0.617  P 0.636  R 0.599  (tp 82, fp 47, fn 55, support 137)
+  PREC       F1 0.228  P 0.170  R 0.345  (tp 30, fp 146, fn 57, support 87)
+  DATE       F1 0.932  P 0.887  R 0.981  (tp 102, fp 13, fn 2, support 104)
+  CASENO     F1 0.402  P 0.336  R 0.500  (tp 49, fp 97, fn 49, support 98)
+test: 4881 entities in 35 docs | per label {'APP': 169, 'RESP': 152, 'AUTH': 398, 'JUDGE': 156, 'CASENO': 417, 'DATE': 763, 'PREC': 914, 'STAT': 966, 'COURT': 620, 'A.COUNSEL': 157, 'R.COUNSEL': 100, 'WIT': 69}
+wrote /kaggle/working/p2runs/prefixlm_lorma/prefixlm_lorma_submission.zip
+done: prefixlm_lorma | best val macro-F1 0.4377 | train 9.3 min | peak 2.5 GB | trainable 2.673M of 112.31M

@@ -1,0 +1,47 @@
+{
+ "run_name": "arch4_adapter",
+ "out_dir": "/kaggle/working/p2runs/arch4_adapter",
+ "model_module": "ner_model",
+ "data": {
+  "tokenizer_dir": "tokenizer",
+  "labels": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/89edba6a44d6bb9593fd13b6895b5cd3b06eb82e/Phase_2_LNER/Train/labels.txt",
+  "train_files": [
+   [
+    "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/89edba6a44d6bb9593fd13b6895b5cd3b06eb82e/Phase_2_LNER/Train/fold1-text.json",
+    "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/89edba6a44d6bb9593fd13b6895b5cd3b06eb82e/Phase_2_LNER/Train/fold1-gold.json"
+   ],
+   [
+    "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/89edba6a44d6bb9593fd13b6895b5cd3b06eb82e/Phase_2_LNER/Train/fold2-text.json",
+    "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/89edba6a44d6bb9593fd13b6895b5cd3b06eb82e/Phase_2_LNER/Train/fold2-gold.json"
+   ]
+  ],
+  "test_file": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/89edba6a44d6bb9593fd13b6895b5cd3b06eb82e/Phase_2_LNER/Test/fold3-text.json",
+  "scheme": "BIO",
+  "decode": "lenient",
+  "window": 512,
+  "stride": 384,
+  "val_frac": 0.15,
+  "split_seed": 0
+ },
+ "model": {
+  "phase1": "arch4",
+  "method": "adapter",
+  "adapter_size": 64,
+  "adapter_style": "houlsby",
+  "lookahead": 4,
+  "head_lr_mult": 1.0
+ },
+ "train": {
+  "epochs": 15,
+  "lr": 0.001,
+  "batch_size": 8,
+  "grad_accum": 1,
+  "warmup_frac": 0.1,
+  "weight_decay": 0.01,
+  "schedule": "linear",
+  "class_weights": null,
+  "max_minutes": 60
+ },
+ "kd": null,
+ "dump_teacher_logits": false
+}

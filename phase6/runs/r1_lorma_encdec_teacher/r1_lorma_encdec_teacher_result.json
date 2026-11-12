@@ -1,0 +1,25 @@
+{
+ "run": "r1_lorma_encdec_teacher",
+ "max_src_tokens": 1019,
+ "src_select": "head_tail",
+ "max_tgt_tokens": 896,
+ "sep_text": "\nSummary:\n",
+ "params_total": 117289728,
+ "params_trainable": 2924544,
+ "train_minutes": 2.628167470296224e-05,
+ "peak_mem_gb": 0.469946368,
+ "gen": {
+  "max_new_tokens": 800,
+  "min_new_tokens": 300,
+  "temperature": 0,
+  "top_k": 0,
+  "top_p": 1.0,
+  "rep_penalty": 1.2,
+  "no_repeat_ngram": 4,
+  "batch_size": 16,
+  "final_val_cases": 0,
+  "bertscore": false
+ },
+ "history": [],
+ "kd": null
+}

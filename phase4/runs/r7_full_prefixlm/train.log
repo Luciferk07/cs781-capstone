@@ -1,0 +1,21 @@
+train 32305 cases {0: 18920, 1: 13385} | dev 994 | test 1517 | chunk_len 512 stride 412 | train max_chunks 4 select last | eval max_chunks 4 select last
+parameters: total 110.13M | trainable 110.127M (100.00%)
+class weights [0.8537262156448203, 1.2067612999626447] | cases/epoch 4000 | steps/epoch 250 | epochs 5
+epoch 1 | train_loss 0.7016 | minutes 18.5158 | dev_macro_f1 0.5311 | dev_acc 0.5493 | dev_pred1 0.6972 | dev_tuned_f1 0.5487 | dev_auc 0.5661
+  best so far (epoch 1)
+epoch 2 | train_loss 0.6899 | minutes 37.8512 | dev_macro_f1 0.4071 | dev_acc 0.5191 | dev_pred1 0.0654 | dev_tuned_f1 0.6113 | dev_auc 0.6305
+  best so far (epoch 2)
+epoch 3 | train_loss 0.6753 | minutes 50.0150 | dev_macro_f1 0.4924 | dev_acc 0.5553 | dev_pred1 0.1479 | dev_tuned_f1 0.5981 | dev_auc 0.6284
+time limit 50.0 min reached
+BEST on dev (argmax) macro-F1 0.4071 | macro-P 0.5782 | macro-R 0.5191 | acc 0.5191 | n 994
+  class 0: F1 0.665  P 0.510  R 0.954  (support 497, predicted 929)
+  class 1: F1 0.149  P 0.646  R 0.085  (support 497, predicted 65)
+  confusion [gold][pred]: [[474, 23], [455, 42]]
+BEST on dev (threshold P(1) >= 0.3247, tuned on dev) macro-F1 0.6113 | macro-P 0.6188 | macro-R 0.6147 | acc 0.6147 | n 994
+  class 0: F1 0.575  P 0.641  R 0.521  (support 497, predicted 404)
+  class 1: F1 0.648  P 0.597  R 0.708  (support 497, predicted 590)
+  confusion [gold][pred]: [[259, 238], [145, 352]]
+test: 1517 cases | predicted {0: 598, 1: 919} | infer 110s
+wrote /kaggle/working/p4runs/r7_full_prefixlm/r7_full_prefixlm_submission.zip
+done: r7_full_prefixlm | best dev macro-F1 0.6113 | train 51.4 min | peak 2.5 GB | trainable 110.127M of 110.13M
+nable 110.127M of 110.13M

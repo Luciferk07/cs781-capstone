@@ -1,0 +1,38 @@
+labels 12 | scheme BIO -> 25 tags | gold end is exclusive (8393 exclusive / 0 inclusive / 0 neither)
+train docs 63 | val docs 7 | test docs 35
+parameters: total 149.49M | trainable 149.492M (100.00%)
+train windows 1101 (window 512, stride 384) | overlapping gold entities not representable: 0
+epoch 1 | train_loss 0.3495 | minutes 1.0759 | val_macro_f1 0.2411 | val_macro_p 0.2154 | val_macro_r 0.3092
+  best so far (epoch 1)
+epoch 2 | train_loss 0.1126 | minutes 2.1749 | val_macro_f1 0.3694 | val_macro_p 0.3356 | val_macro_r 0.4306
+  best so far (epoch 2)
+epoch 3 | train_loss 0.0613 | minutes 3.2570 | val_macro_f1 0.3264 | val_macro_p 0.2905 | val_macro_r 0.4222
+epoch 4 | train_loss 0.0362 | minutes 4.2884 | val_macro_f1 0.3271 | val_macro_p 0.3187 | val_macro_r 0.3454
+epoch 5 | train_loss 0.0232 | minutes 5.2957 | val_macro_f1 0.3580 | val_macro_p 0.3448 | val_macro_r 0.3911
+epoch 6 | train_loss 0.0113 | minutes 6.2892 | val_macro_f1 0.3808 | val_macro_p 0.3505 | val_macro_r 0.4464
+  best so far (epoch 6)
+epoch 7 | train_loss 0.0060 | minutes 7.2772 | val_macro_f1 0.4191 | val_macro_p 0.3960 | val_macro_r 0.4639
+  best so far (epoch 7)
+epoch 8 | train_loss 0.0031 | minutes 8.3117 | val_macro_f1 0.4273 | val_macro_p 0.4149 | val_macro_r 0.4513
+  best so far (epoch 8)
+epoch 9 | train_loss 0.0019 | minutes 9.3660 | val_macro_f1 0.4323 | val_macro_p 0.4142 | val_macro_r 0.4648
+  best so far (epoch 9)
+epoch 10 | train_loss 0.0010 | minutes 10.4245 | val_macro_f1 0.4238 | val_macro_p 0.4073 | val_macro_r 0.4519
+BEST checkpoint on validation:
+strict macro-F1 0.4323 (over labels present: 0.4323) | macro-P 0.4142 | macro-R 0.4648
+  APP        F1 0.000  P 0.000  R 0.000  (tp 0, fp 46, fn 36, support 36)
+  RESP       F1 0.486  P 0.419  R 0.581  (tp 18, fp 25, fn 13, support 31)
+  A.COUNSEL  F1 0.000  P 0.000  R 0.000  (tp 0, fp 19, fn 16, support 16)
+  R.COUNSEL  F1 0.444  P 0.381  R 0.533  (tp 8, fp 13, fn 7, support 15)
+  JUDGE      F1 0.500  P 0.406  R 0.650  (tp 13, fp 19, fn 7, support 20)
+  WIT        F1 0.211  P 0.200  R 0.222  (tp 6, fp 24, fn 21, support 27)
+  AUTH       F1 0.431  P 0.459  R 0.406  (tp 28, fp 33, fn 41, support 69)
+  COURT      F1 0.829  P 0.780  R 0.885  (tp 92, fp 26, fn 12, support 104)
+  STAT       F1 0.637  P 0.722  R 0.569  (tp 78, fp 30, fn 59, support 137)
+  PREC       F1 0.237  P 0.188  R 0.322  (tp 28, fp 121, fn 59, support 87)
+  DATE       F1 0.962  P 0.953  R 0.971  (tp 101, fp 5, fn 3, support 104)
+  CASENO     F1 0.450  P 0.462  R 0.439  (tp 43, fp 50, fn 55, support 98)
+teacher logits written for 70 docs
+test: 4922 entities in 35 docs | per label {'CASENO': 369, 'PREC': 1001, 'APP': 188, 'RESP': 111, 'JUDGE': 135, 'DATE': 768, 'AUTH': 470, 'STAT': 947, 'COURT': 606, 'A.COUNSEL': 167, 'R.COUNSEL': 105, 'WIT': 55}
+wrote /kaggle/working/p2runs/biscale_full/biscale_full_submission.zip
+done: biscale_full | best val macro-F1 0.4323 | train 10.5 min | peak 5.9 GB | trainable 149.492M of 149.49M

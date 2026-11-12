@@ -1,0 +1,59 @@
+{
+ "run_name": "r6_kd_encdec_student",
+ "out_dir": "/kaggle/working/p6runs/r6_kd_encdec_student",
+ "model_module": "sum_model",
+ "data": {
+  "tokenizer_dir": "tokenizer",
+  "train": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/93b0059be756c6c461f3a225de25aabda7d5f84a/Phase_6_Summ/Train/train.json",
+  "test": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/93b0059be756c6c461f3a225de25aabda7d5f84a/Phase_6_Summ/Test/test.json",
+  "cache_dir": "sum_cache",
+  "val_cases": 200,
+  "val_seed": 0,
+  "max_src_tokens": 1019,
+  "src_select": "head_tail",
+  "max_tgt_tokens": 896,
+  "sep_text": "\nSummary:\n",
+  "start_token": "</s>",
+  "end_token": "</s>",
+  "head_frac": 0.6
+ },
+ "model": {
+  "phase1": "encdec",
+  "method": "full",
+  "keep_layers": 4,
+  "keep_dec_layers": 3,
+  "keep_mode": "spread",
+  "backbone_lr_mult": 0.1
+ },
+ "train": {
+  "epochs": 10,
+  "epoch_cases": 3000,
+  "lr": 0.0005,
+  "batch_size": 4,
+  "grad_accum": 4,
+  "warmup_frac": 0.05,
+  "weight_decay": 0.01,
+  "schedule": "linear",
+  "label_smoothing": 0.1,
+  "select_metric": "val_loss",
+  "val_gen_cases": 8,
+  "max_minutes": 100
+ },
+ "gen": {
+  "max_new_tokens": 800,
+  "min_new_tokens": 300,
+  "temperature": 0,
+  "top_k": 0,
+  "top_p": 1.0,
+  "rep_penalty": 1.2,
+  "no_repeat_ngram": 4,
+  "batch_size": 16,
+  "final_val_cases": 30,
+  "bertscore": false
+ },
+ "kd": {
+  "teacher_summaries": "/kaggle/working/p6runs/r1_lorma_encdec_teacher/r1_lorma_encdec_teacher_teacher_summaries.json",
+  "mode": "add"
+ },
+ "dump_teacher_summaries": null
+}

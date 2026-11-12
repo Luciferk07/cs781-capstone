@@ -1,0 +1,27 @@
+dropped 2 training documents with an empty summary: ['299', '4799']
+train pairs 6828 | val 200 | test 100 | doc tokens {'n': 7028, 'p10': 1581, 'p50': 3670, 'p90': 9107, 'p99': 28231, 'max': 162707} | summary tokens {'n': 7028, 'p10': 343, 'p50': 754, 'p90': 1790, 'p99': 5141, 'max': 32609} | max_src 520 (head_tail) + sep 5 | max_tgt 480 | summaries longer than max_tgt: 76.9%
+parameters: total 111.39M | trainable 1.784M (1.60%)
+generation: cached (prefill/decode_step)
+cases/epoch 3000 | steps/epoch 188 | epochs 10 | select by val_loss | per-epoch generation on 8 val docs
+epoch 1 | train_loss 3.8300 | minutes 3.1164 | val_loss 3.7295 | val_rouge1 0.2690 | val_rougeL 0.1446 | val_words 265.5000
+  best so far (epoch 1)
+epoch 2 | train_loss 3.7309 | minutes 6.5523 | val_loss 3.7043 | val_rouge1 0.2811 | val_rougeL 0.1467 | val_words 254.2500
+  best so far (epoch 2)
+epoch 3 | train_loss 3.6964 | minutes 10.0050 | val_loss 3.6951 | val_rouge1 0.2709 | val_rougeL 0.1430 | val_words 260.0000
+  best so far (epoch 3)
+epoch 4 | train_loss 3.6722 | minutes 13.4660 | val_loss 3.6877 | val_rouge1 0.2484 | val_rougeL 0.1399 | val_words 252.7500
+  best so far (epoch 4)
+epoch 5 | train_loss 3.6567 | minutes 16.9111 | val_loss 3.6880 | val_rouge1 0.2912 | val_rougeL 0.1494 | val_words 301.6250
+epoch 6 | train_loss 3.6312 | minutes 20.3842 | val_loss 3.6855 | val_rouge1 0.2647 | val_rougeL 0.1441 | val_words 254.7500
+  best so far (epoch 6)
+epoch 7 | train_loss 3.6270 | minutes 23.8284 | val_loss 3.6839 | val_rouge1 0.2781 | val_rougeL 0.1433 | val_words 254.2500
+  best so far (epoch 7)
+epoch 8 | train_loss 3.5889 | minutes 27.2735 | val_loss 3.6856 | val_rouge1 0.2784 | val_rougeL 0.1459 | val_words 304.6250
+epoch 9 | train_loss 3.5949 | minutes 30.7317 | val_loss 3.6830 | val_rouge1 0.2707 | val_rougeL 0.1420 | val_words 294.3750
+  best so far (epoch 9)
+epoch 10 | train_loss 3.5692 | minutes 34.1967 | val_loss 3.6850 | val_rouge1 0.2892 | val_rougeL 0.1515 | val_words 298.7500
+VAL generation: rouge1 0.3427 | rouge2 0.1199 | rougeL 0.1794 | words_pred 279.9000 | words_ref 874.1000 | gen_seconds 17.0657 | n 30
+  example [6277]: The appellant landlord filed a suit for eviction of the tenant from the premises in question under section 14(1)(a) of the Delhi Rent Control Act, 1958. The respondent landlord contested the suit on the ground that he was not a tenant and that the tenancy had been terminated by the landlord without his consent. The trial court decreed the suit holding that the tenant had failed to prove that the l
+test: 100 docs | words per summary mean 284 (min 200, max 431) | empty 0 | generation 0.9 min
+wrote /kaggle/working/p6runs/r3_houlsby_arch4/r3_houlsby_arch4_submission.zip
+done: r3_houlsby_arch4 | best val_loss 3.6830 | train 34.4 min | peak 3.6 GB | trainable 1.784M of 111.39M

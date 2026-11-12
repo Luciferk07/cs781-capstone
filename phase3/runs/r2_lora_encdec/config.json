@@ -1,0 +1,55 @@
+{
+ "run_name": "r2_lora_encdec",
+ "out_dir": "/kaggle/working/p3runs/r2_lora_encdec",
+ "model_module": "rr_model",
+ "data": {
+  "tokenizer_dir": "tokenizer",
+  "label_vocab": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/89edba6a44d6bb9593fd13b6895b5cd3b06eb82e/Phase_3_RR/Train/label_vocab.json",
+  "domains": {
+   "CL": {
+    "train": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/89edba6a44d6bb9593fd13b6895b5cd3b06eb82e/Phase_3_RR/Train/CL_train.json",
+    "dev": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/89edba6a44d6bb9593fd13b6895b5cd3b06eb82e/Phase_3_RR/Train/CL_dev.json",
+    "test": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/89edba6a44d6bb9593fd13b6895b5cd3b06eb82e/Phase_3_RR/Test/CL_test.json"
+   },
+   "IT": {
+    "train": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/89edba6a44d6bb9593fd13b6895b5cd3b06eb82e/Phase_3_RR/Train/IT_train.json",
+    "dev": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/89edba6a44d6bb9593fd13b6895b5cd3b06eb82e/Phase_3_RR/Train/IT_dev.json",
+    "test": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/89edba6a44d6bb9593fd13b6895b5cd3b06eb82e/Phase_3_RR/Test/IT_test.json"
+   }
+  },
+  "train_splits": [
+   "train"
+  ],
+  "train_domains": [
+   "CL",
+   "IT"
+  ],
+  "mode": "context",
+  "window": 512,
+  "sep": "\u010a",
+  "target_frac": 0.5,
+  "prefix_space": true,
+  "max_sent_tokens": null
+ },
+ "model": {
+  "phase1": "encdec",
+  "method": "lora",
+  "rank": 16,
+  "alpha": 32,
+  "head_lr_mult": 2.0
+ },
+ "train": {
+  "epochs": 15,
+  "lr": 0.0005,
+  "batch_size": 8,
+  "grad_accum": 1,
+  "warmup_frac": 0.1,
+  "weight_decay": 0.01,
+  "schedule": "linear",
+  "class_weights": null,
+  "max_minutes": 30
+ },
+ "kd": null,
+ "dump_teacher_logits": false,
+ "select": "combined"
+}

@@ -1,0 +1,30 @@
+dropped 2 training documents with an empty summary: ['299', '4799']
+train pairs 6828 | val 200 | test 100 | doc tokens {'n': 7028, 'p10': 1581, 'p50': 3670, 'p90': 9107, 'p99': 28231, 'max': 162707} | summary tokens {'n': 7028, 'p10': 343, 'p50': 754, 'p90': 1790, 'p99': 5141, 'max': 32609} | max_src 1019 (head_tail) + sep 5 | max_tgt 896 | summaries longer than max_tgt: 38.9%
+parameters: total 117.29M | trainable 2.925M (2.49%)
+generation: cached (prefill/decode_step)
+cases/epoch 3000 | steps/epoch 188 | epochs 10 | select by val_loss | per-epoch generation on 8 val docs
+epoch 1 | train_loss 4.2641 | minutes 4.1079 | val_loss 4.1307 | val_rouge1 0.2465 | val_rougeL 0.1364 | val_words 302.0000
+  best so far (epoch 1)
+epoch 2 | train_loss 4.1440 | minutes 8.5743 | val_loss 4.0866 | val_rouge1 0.2335 | val_rougeL 0.1237 | val_words 284.2500
+  best so far (epoch 2)
+epoch 3 | train_loss 4.1065 | minutes 12.9814 | val_loss 4.0724 | val_rouge1 0.2568 | val_rougeL 0.1361 | val_words 333.3750
+  best so far (epoch 3)
+epoch 4 | train_loss 4.0833 | minutes 17.4038 | val_loss 4.0636 | val_rouge1 0.2373 | val_rougeL 0.1330 | val_words 275.0000
+  best so far (epoch 4)
+epoch 5 | train_loss 4.0769 | minutes 21.8100 | val_loss 4.0549 | val_rouge1 0.2264 | val_rougeL 0.1291 | val_words 251.2500
+  best so far (epoch 5)
+epoch 6 | train_loss 4.0510 | minutes 26.1638 | val_loss 4.0494 | val_rouge1 0.2347 | val_rougeL 0.1274 | val_words 263.7500
+  best so far (epoch 6)
+epoch 7 | train_loss 4.0544 | minutes 30.5332 | val_loss 4.0455 | val_rouge1 0.2459 | val_rougeL 0.1308 | val_words 257.5000
+  best so far (epoch 7)
+epoch 8 | train_loss 4.0311 | minutes 34.9061 | val_loss 4.0412 | val_rouge1 0.2528 | val_rougeL 0.1366 | val_words 314.1250
+  best so far (epoch 8)
+epoch 9 | train_loss 4.0335 | minutes 39.3309 | val_loss 4.0369 | val_rouge1 0.2375 | val_rougeL 0.1281 | val_words 270.3750
+  best so far (epoch 9)
+epoch 10 | train_loss 4.0182 | minutes 43.7391 | val_loss 4.0353 | val_rouge1 0.2575 | val_rougeL 0.1366 | val_words 287.1250
+  best so far (epoch 10)
+VAL generation: rouge1 0.2958 | rouge2 0.0755 | rougeL 0.1606 | words_pred 293.7333 | words_ref 874.1000 | gen_seconds 14.8128 | n 30
+  example [6277]: The appellant was a tenant of the respondent in respect of certain premises. The Rent Controller dismissed his eviction petition on the ground that he had not been able to show cause why he should not be evicted from the premises and that he could not be evicted by virtue of section 13(1) (a) of the Act. In appeal, this Court, HELD: 1. The order of eviction is an appealable order under section 13(
+test: 100 docs | words per summary mean 301 (min 240, max 695) | empty 0 | generation 1.0 min
+wrote /kaggle/working/p6runs/r1_lorma_encdec/r1_lorma_encdec_submission.zip
+done: r1_lorma_encdec | best val_loss 4.0353 | train 44.0 min | peak 4.0 GB | trainable 2.925M of 117.29M

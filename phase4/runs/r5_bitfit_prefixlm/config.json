@@ -1,0 +1,45 @@
+{
+ "run_name": "r5_bitfit_prefixlm",
+ "out_dir": "/kaggle/working/p4runs/r5_bitfit_prefixlm",
+ "model_module": "cj_model",
+ "data": {
+  "tokenizer_dir": "tokenizer",
+  "train": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/93b0059be756c6c461f3a225de25aabda7d5f84a/Phase_4_CJPE/Train/train.json",
+  "dev": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/93b0059be756c6c461f3a225de25aabda7d5f84a/Phase_4_CJPE/Train/dev.json",
+  "test": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/93b0059be756c6c461f3a225de25aabda7d5f84a/Phase_4_CJPE/Test/test.json",
+  "cache_dir": "cj_cache",
+  "chunk_len": 512,
+  "stride": 412,
+  "max_chunks": 4,
+  "select": "last",
+  "eval_max_chunks": 4,
+  "eval_select": "last",
+  "lowercase": false
+ },
+ "model": {
+  "phase1": "prefixlm",
+  "method": "bitfit",
+  "pool": "mean",
+  "agg": "gru",
+  "head_hidden": 256,
+  "head_lr_mult": 2.0,
+  "backbone_lr_mult": 2.0
+ },
+ "train": {
+  "epochs": 5,
+  "epoch_cases": 4000,
+  "lr": 0.0005,
+  "batch_size": 4,
+  "grad_accum": 4,
+  "warmup_frac": 0.06,
+  "weight_decay": 0.01,
+  "schedule": "linear",
+  "class_weights": "balanced",
+  "threshold": "dev_tuned",
+  "max_minutes": 50,
+  "select_metric": "tuned_macro_f1"
+ },
+ "kd": null,
+ "dump_teacher_logits": false,
+ "teacher_cases": null
+}

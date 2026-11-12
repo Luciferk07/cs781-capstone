@@ -1,0 +1,49 @@
+{
+ "run_name": "r2_full_encdec",
+ "out_dir": "/kaggle/working/p5runs/r2_full_encdec",
+ "model_module": "cj_model",
+ "data": {
+  "tokenizer_dir": "tokenizer",
+  "train": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/93b0059be756c6c461f3a225de25aabda7d5f84a/Phase_5_LSI/Train/train.json",
+  "dev": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/93b0059be756c6c461f3a225de25aabda7d5f84a/Phase_5_LSI/Train/dev.json",
+  "test": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/93b0059be756c6c461f3a225de25aabda7d5f84a/Phase_5_LSI/Test/test.json",
+  "cache_dir": "lsi_cache",
+  "chunk_len": 512,
+  "stride": 448,
+  "max_chunks": 4,
+  "select": "head_tail",
+  "eval_max_chunks": 4,
+  "eval_select": "head_tail",
+  "lowercase": false
+ },
+ "model": {
+  "phase1": "encdec",
+  "method": "full",
+  "pool": "mean",
+  "agg": "chunk_max",
+  "head_lr_mult": 2.0,
+  "backbone_lr_mult": 0.06,
+  "out_prior": 0.039,
+  "head_hidden": 512
+ },
+ "train": {
+  "epochs": 6,
+  "epoch_cases": 8000,
+  "lr": 0.0005,
+  "batch_size": 4,
+  "grad_accum": 4,
+  "warmup_frac": 0.06,
+  "weight_decay": 0.01,
+  "schedule": "linear",
+  "loss": "bce",
+  "pos_weight": "balanced",
+  "pos_weight_max": 10.0,
+  "threshold": "per_label",
+  "min_labels": 1,
+  "select_metric": "tuned_macro_f1",
+  "max_minutes": 85
+ },
+ "kd": null,
+ "dump_teacher_logits": false,
+ "teacher_cases": null
+}

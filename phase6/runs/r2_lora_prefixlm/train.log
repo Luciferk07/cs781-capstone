@@ -1,0 +1,26 @@
+dropped 2 training documents with an empty summary: ['299', '4799']
+train pairs 6828 | val 200 | test 100 | doc tokens {'n': 7028, 'p10': 1581, 'p50': 3670, 'p90': 9107, 'p99': 28231, 'max': 162707} | summary tokens {'n': 7028, 'p10': 343, 'p50': 754, 'p90': 1790, 'p99': 5141, 'max': 32609} | max_src 520 (head_tail) + sep 5 | max_tgt 480 | summaries longer than max_tgt: 76.9%
+parameters: total 111.99M | trainable 2.359M (2.11%)
+generation: cached (prefill/decode_step)
+cases/epoch 3000 | steps/epoch 188 | epochs 10 | select by val_loss | per-epoch generation on 8 val docs
+epoch 1 | train_loss 3.7332 | minutes 3.5514 | val_loss 3.6196 | val_rouge1 0.2790 | val_rougeL 0.1547 | val_words 269.8750
+  best so far (epoch 1)
+epoch 2 | train_loss 3.6118 | minutes 7.4853 | val_loss 3.5925 | val_rouge1 0.2951 | val_rougeL 0.1565 | val_words 275.0000
+  best so far (epoch 2)
+epoch 3 | train_loss 3.5632 | minutes 11.4248 | val_loss 3.5794 | val_rouge1 0.2950 | val_rougeL 0.1634 | val_words 278.7500
+  best so far (epoch 3)
+epoch 4 | train_loss 3.5277 | minutes 15.3522 | val_loss 3.5626 | val_rouge1 0.3132 | val_rougeL 0.1669 | val_words 309.5000
+  best so far (epoch 4)
+epoch 5 | train_loss 3.5068 | minutes 19.3077 | val_loss 3.5627 | val_rouge1 0.3265 | val_rougeL 0.1763 | val_words 358.0000
+epoch 6 | train_loss 3.4656 | minutes 23.2544 | val_loss 3.5609 | val_rouge1 0.3360 | val_rougeL 0.1784 | val_words 350.2500
+  best so far (epoch 6)
+epoch 7 | train_loss 3.4665 | minutes 27.1976 | val_loss 3.5592 | val_rouge1 0.3111 | val_rougeL 0.1638 | val_words 328.2500
+  best so far (epoch 7)
+epoch 8 | train_loss 3.4125 | minutes 31.1477 | val_loss 3.5639 | val_rouge1 0.3584 | val_rougeL 0.1857 | val_words 368.6250
+epoch 9 | train_loss 3.4247 | minutes 35.1030 | val_loss 3.5611 | val_rouge1 0.3323 | val_rougeL 0.1762 | val_words 354.1250
+epoch 10 | train_loss 3.3886 | minutes 39.0614 | val_loss 3.5647 | val_rouge1 0.3537 | val_rougeL 0.1787 | val_words 368.0000
+VAL generation: rouge1 0.3874 | rouge2 0.1587 | rougeL 0.2065 | words_pred 331.0667 | words_ref 874.1000 | gen_seconds 21.7792 | n 30
+  example [6277]: The appellant tenant filed a petition under section 14(1)(b) of the Delhi Rent Control Act, 1958 for an order of eviction of the respondent landlord on the ground that he had no locus standi to file the petition. The High Court dismissed the petition holding that there was no sub letting or parting with the possession of the shop after 9th day of June 1952 to M/s Hira Lal and that the name of the 
+test: 100 docs | words per summary mean 315 (min 196, max 443) | empty 0 | generation 1.2 min
+wrote /kaggle/working/p6runs/r2_lora_prefixlm/r2_lora_prefixlm_submission.zip
+done: r2_lora_prefixlm | best val_loss 3.5592 | train 39.3 min | peak 3.4 GB | trainable 2.359M of 111.99M

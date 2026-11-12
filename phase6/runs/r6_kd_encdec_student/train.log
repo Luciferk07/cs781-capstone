@@ -1,0 +1,31 @@
+KD: 800 teacher summaries (add) -> 7628 training pairs
+dropped 2 training documents with an empty summary: ['299', '4799']
+train pairs 7628 | val 200 | test 100 | doc tokens {'n': 7028, 'p10': 1581, 'p50': 3670, 'p90': 9107, 'p99': 28231, 'max': 162707} | summary tokens {'n': 7028, 'p10': 343, 'p50': 754, 'p90': 1790, 'p99': 5141, 'max': 32609} | max_src 1019 (head_tail) + sep 5 | max_tgt 896 | summaries longer than max_tgt: 38.9%
+parameters: total 81.29M | trainable 81.286M (100.00%)
+generation: cached (prefill/decode_step)
+cases/epoch 3000 | steps/epoch 188 | epochs 10 | select by val_loss | per-epoch generation on 8 val docs
+epoch 1 | train_loss 4.7668 | minutes 2.7215 | val_loss 4.4838 | val_rouge1 0.2225 | val_rougeL 0.1230 | val_words 274.0000
+  best so far (epoch 1)
+epoch 2 | train_loss 4.2687 | minutes 5.6774 | val_loss 4.3146 | val_rouge1 0.2316 | val_rougeL 0.1243 | val_words 270.7500
+  best so far (epoch 2)
+epoch 3 | train_loss 4.1237 | minutes 8.6720 | val_loss 4.2524 | val_rouge1 0.2513 | val_rougeL 0.1370 | val_words 279.1250
+  best so far (epoch 3)
+epoch 4 | train_loss 4.0412 | minutes 11.6785 | val_loss 4.2132 | val_rouge1 0.2489 | val_rougeL 0.1364 | val_words 295.5000
+  best so far (epoch 4)
+epoch 5 | train_loss 4.0097 | minutes 14.6996 | val_loss 4.1859 | val_rouge1 0.2501 | val_rougeL 0.1361 | val_words 294.1250
+  best so far (epoch 5)
+epoch 6 | train_loss 3.9172 | minutes 17.7029 | val_loss 4.1736 | val_rouge1 0.2485 | val_rougeL 0.1332 | val_words 288.0000
+  best so far (epoch 6)
+epoch 7 | train_loss 3.9177 | minutes 20.7118 | val_loss 4.1593 | val_rouge1 0.2495 | val_rougeL 0.1360 | val_words 280.7500
+  best so far (epoch 7)
+epoch 8 | train_loss 3.8792 | minutes 23.7681 | val_loss 4.1503 | val_rouge1 0.2619 | val_rougeL 0.1379 | val_words 294.0000
+  best so far (epoch 8)
+epoch 9 | train_loss 3.8539 | minutes 26.8255 | val_loss 4.1483 | val_rouge1 0.2569 | val_rougeL 0.1351 | val_words 287.5000
+  best so far (epoch 9)
+epoch 10 | train_loss 3.8384 | minutes 29.8716 | val_loss 4.1453 | val_rouge1 0.2630 | val_rougeL 0.1371 | val_words 290.0000
+  best so far (epoch 10)
+VAL generation: rouge1 0.2972 | rouge2 0.0744 | rougeL 0.1589 | words_pred 287.7667 | words_ref 874.1000 | gen_seconds 5.5428 | n 30
+  example [6277]: The appellant was a tenant of the respondent in respect of certain premises. The landlord filed an application under section 13(1) of the Act for eviction of the tenant on the ground that he had not been cultivating any land and that he had no right to occupy the premises. The Rent Controller dismissed the application. In appeal by special leave, it was contended that the provisions of section 13(
+test: 100 docs | words per summary mean 289 (min 256, max 380) | empty 0 | generation 0.3 min
+wrote /kaggle/working/p6runs/r6_kd_encdec_student/r6_kd_encdec_student_submission.zip
+done: r6_kd_encdec_student | best val_loss 4.1453 | train 30.0 min | peak 3.9 GB | trainable 81.286M of 81.29M

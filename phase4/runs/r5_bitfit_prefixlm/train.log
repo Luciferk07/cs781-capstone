@@ -1,0 +1,15 @@
+train 32305 cases {0: 18920, 1: 13385} | dev 994 | test 1517 | chunk_len 512 stride 412 | train max_chunks 4 select last | eval max_chunks 4 select last
+parameters: total 110.13M | trainable 0.597M (0.54%)
+class weights [0.8537262156448203, 1.2067612999626447] | cases/epoch 4000 | steps/epoch 250 | epochs 5
+epoch 1 | train_loss 0.6956 | minutes 10.6043 | dev_macro_f1 0.5794 | dev_acc 0.5795 | dev_pred1 0.5101 | dev_tuned_f1 0.5842 | dev_auc 0.6009
+  best so far (epoch 1)eepoch 2 | train_loss 0.6951 | minutes 22.4762 | dev_macro_f1 0.3391 | dev_acc 0.5010 | dev_pred1 0.0050 | dev_tuned_f1 0.5599 | dev_auc 0.5707eepoch 3 | train_loss 0.6895 | minutes 34.3354 | dev_macro_f1 0.3333 | dev_acc 0.5000 | dev_pred1 0.0000 | dev_tuned_f1 0.5563 | dev_auc 0.5799eepoch 4 | train_loss 0.6885 | minutes 46.3260 | dev_macro_f1 0.4105 | dev_acc 0.5292 | dev_pred1 0.0513 | dev_tuned_f1 0.5783 | dev_auc 0.6116eepoch 5 | train_loss 0.6791 | minutes 50.0078 | dev_macro_f1 0.5432 | dev_acc 0.5433 | dev_pred1 0.5121 | dev_tuned_f1 0.5600 | dev_auc 0.5871
+time limit 50.0 min reachedBBEST on dev (argmax) macro-F1 0.5794 | macro-P 0.5795 | macro-R 0.5795 | acc 0.5795 | n 994
+  class 0: F1 0.575  P 0.581  R 0.569  (support 497, predicted 487)
+  class 1: F1 0.584  P 0.578  R 0.590  (support 497, predicted 507)
+  confusion [gold][pred]: [[283, 214], [204, 293]]
+BEST on dev (threshold P(1) >= 0.5038, tuned on dev) macro-F1 0.5842 | macro-P 0.5848 | macro-R 0.5845 | acc 0.5845 | n 994
+  class 0: F1 0.595  P 0.580  R 0.612  (support 497, predicted 524)
+  class 1: F1 0.573  P 0.589  R 0.557  (support 497, predicted 470)
+  confusion [gold][pred]: [[304, 193], [220, 277]]ttest: 1517 cases | predicted {1: 738, 0: 779} | infer 98s
+wrote /kaggle/working/p4runs/r5_bitfit_prefixlm/r5_bitfit_prefixlm_submission.zip
+done: r5_bitfit_prefixlm | best dev macro-F1 0.5842 | train 51.2 min | peak 3.0 GB | trainable 0.597M of 110.13M

@@ -1,0 +1,133 @@
+{
+ "run": "r4_adapter_biscale",
+ "chunk_len": 512,
+ "stride": 412,
+ "max_chunks": 4,
+ "select": "last",
+ "eval_max_chunks": 4,
+ "eval_select": "last",
+ "params_total": 148027395,
+ "params_trainable": 3863811,
+ "train_minutes": 48.30696359872818,
+ "peak_mem_gb": 5.59081216,
+ "class_weights": [
+  0.8537262156448203,
+  1.2067612999626447
+ ],
+ "history": [
+  {
+   "epoch": 1,
+   "train_loss": 0.7026868178546428,
+   "minutes": 8.55728064775467,
+   "dev_macro_f1": 0.3333333333333333,
+   "dev_acc": 0.5,
+   "dev_pred1": 0.0
+  },
+  {
+   "epoch": 2,
+   "train_loss": 0.7002270688116551,
+   "minutes": 17.99839323759079,
+   "dev_macro_f1": 0.3333333333333333,
+   "dev_acc": 0.5,
+   "dev_pred1": 0.0
+  },
+  {
+   "epoch": 3,
+   "train_loss": 0.6980772889554501,
+   "minutes": 27.546881314118703,
+   "dev_macro_f1": 0.3333333333333333,
+   "dev_acc": 0.5,
+   "dev_pred1": 0.0
+  },
+  {
+   "epoch": 4,
+   "train_loss": 0.6938360885977745,
+   "minutes": 37.40134028196335,
+   "dev_macro_f1": 0.3333333333333333,
+   "dev_acc": 0.5,
+   "dev_pred1": 0.0
+  },
+  {
+   "epoch": 5,
+   "train_loss": 0.6944855763912201,
+   "minutes": 47.257496639092764,
+   "dev_macro_f1": 0.3333333333333333,
+   "dev_acc": 0.5,
+   "dev_pred1": 0.0
+  }
+ ],
+ "dev_infer_seconds": 63.3582878112793,
+ "dev_argmax": {
+  "macro_f1": 0.3333333333333333,
+  "macro_p": 0.25,
+  "macro_r": 0.5,
+  "accuracy": 0.5,
+  "per_class": {
+   "0": {
+    "p": 0.5,
+    "r": 1.0,
+    "f1": 0.6666666666666666,
+    "support": 497,
+    "predicted": 994
+   },
+   "1": {
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0,
+    "support": 497,
+    "predicted": 0
+   }
+  },
+  "confusion": [
+   [
+    497,
+    0
+   ],
+   [
+    497,
+    0
+   ]
+  ],
+  "n": 994
+ },
+ "dev": {
+  "macro_f1": 0.386706553239226,
+  "macro_p": 0.5081145506792059,
+  "macro_r": 0.5020120724346077,
+  "accuracy": 0.5020120724346077,
+  "per_class": {
+   "0": {
+    "p": 0.5151515151515151,
+    "r": 0.06841046277665996,
+    "f1": 0.12078152753108348,
+    "support": 497,
+    "predicted": 66
+   },
+   "1": {
+    "p": 0.5010775862068966,
+    "r": 0.9356136820925554,
+    "f1": 0.6526315789473685,
+    "support": 497,
+    "predicted": 928
+   }
+  },
+  "confusion": [
+   [
+    34,
+    463
+   ],
+   [
+    32,
+    465
+   ]
+  ],
+  "n": 994
+ },
+ "threshold": 0.4771,
+ "test_cases": 1517,
+ "test_infer_seconds": 95.91311383247375,
+ "test_pred_counts": {
+  "1": 1408,
+  "0": 109
+ }
+}

@@ -1,0 +1,22 @@
+labels 12 | scheme BIO -> 25 tags | gold end is exclusive (8393 exclusive / 0 inclusive / 0 neither)
+train docs 63 | val docs 7 | test docs 35
+parameters: total 149.49M | trainable 149.492M (100.00%)
+loaded 214 trained tensors from /kaggle/working/p2runs/biscale_full/biscale_full_trained_params.pt
+train windows 1101 (window 512, stride 384) | overlapping gold entities not representable: 0
+BEST checkpoint on validation:
+strict macro-F1 0.4942 (over labels present: 0.4942) | macro-P 0.5093 | macro-R 0.4887
+  APP        F1 0.000  P 0.000  R 0.000  (tp 0, fp 26, fn 36, support 36)
+  RESP       F1 0.603  P 0.594  R 0.613  (tp 19, fp 13, fn 12, support 31)
+  A.COUNSEL  F1 0.071  P 0.083  R 0.062  (tp 1, fp 11, fn 15, support 16)
+  R.COUNSEL  F1 0.533  P 0.533  R 0.533  (tp 8, fp 7, fn 7, support 15)
+  JUDGE      F1 0.565  P 0.500  R 0.650  (tp 13, fp 13, fn 7, support 20)
+  WIT        F1 0.267  P 0.333  R 0.222  (tp 6, fp 12, fn 21, support 27)
+  AUTH       F1 0.455  P 0.519  R 0.406  (tp 28, fp 26, fn 41, support 69)
+  COURT      F1 0.853  P 0.816  R 0.894  (tp 93, fp 21, fn 11, support 104)
+  STAT       F1 0.706  P 0.832  R 0.613  (tp 84, fp 17, fn 53, support 137)
+  PREC       F1 0.338  P 0.306  R 0.379  (tp 33, fp 75, fn 54, support 87)
+  DATE       F1 0.976  P 0.971  R 0.981  (tp 102, fp 3, fn 2, support 104)
+  CASENO     F1 0.562  P 0.625  R 0.510  (tp 50, fp 30, fn 48, support 98)
+test: 4159 entities in 35 docs | per label {'CASENO': 306, 'APP': 116, 'RESP': 70, 'JUDGE': 113, 'DATE': 745, 'AUTH': 404, 'STAT': 873, 'COURT': 579, 'PREC': 701, 'A.COUNSEL': 136, 'R.COUNSEL': 84, 'WIT': 32}
+wrote /kaggle/working/p2runs/biscale_full_viterbi/biscale_full_viterbi_submission.zip
+done: biscale_full_viterbi | best val macro-F1 -1.0000 | train 0.0 min | peak 0.7 GB | trainable 149.492M of 149.49M

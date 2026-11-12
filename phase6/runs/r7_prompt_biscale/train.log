@@ -1,0 +1,30 @@
+dropped 2 training documents with an empty summary: ['299', '4799']
+train pairs 6828 | val 200 | test 100 | doc tokens {'n': 7028, 'p10': 1581, 'p50': 3670, 'p90': 9107, 'p99': 28231, 'max': 162707} | summary tokens {'n': 7028, 'p10': 343, 'p50': 754, 'p90': 1790, 'p99': 5141, 'max': 32609} | max_src 488 (head_tail) + sep 5 | max_tgt 480 | summaries longer than max_tgt: 76.9%
+parameters: total 144.19M | trainable 0.025M (0.02%)
+generation: cached (prefill/decode_step)
+cases/epoch 3000 | steps/epoch 188 | epochs 10 | select by val_loss | per-epoch generation on 8 val docs
+epoch 1 | train_loss 4.7707 | minutes 4.4310 | val_loss 4.7208 | val_rouge1 0.2581 | val_rougeL 0.1427 | val_words 393.3750
+  best so far (epoch 1)
+epoch 2 | train_loss 4.7400 | minutes 10.4966 | val_loss 4.7113 | val_rouge1 0.2748 | val_rougeL 0.1476 | val_words 408.1250
+  best so far (epoch 2)
+epoch 3 | train_loss 4.7328 | minutes 16.5594 | val_loss 4.7060 | val_rouge1 0.2681 | val_rougeL 0.1463 | val_words 410.3750
+  best so far (epoch 3)
+epoch 4 | train_loss 4.7205 | minutes 22.6319 | val_loss 4.7027 | val_rouge1 0.2631 | val_rougeL 0.1431 | val_words 405.6250
+  best so far (epoch 4)
+epoch 5 | train_loss 4.7264 | minutes 28.7037 | val_loss 4.6991 | val_rouge1 0.2943 | val_rougeL 0.1536 | val_words 407.8750
+  best so far (epoch 5)
+epoch 6 | train_loss 4.7226 | minutes 34.7679 | val_loss 4.6957 | val_rouge1 0.2876 | val_rougeL 0.1525 | val_words 417.1250
+  best so far (epoch 6)
+epoch 7 | train_loss 4.7198 | minutes 40.8339 | val_loss 4.6930 | val_rouge1 0.2908 | val_rougeL 0.1586 | val_words 419.1250
+  best so far (epoch 7)
+epoch 8 | train_loss 4.7105 | minutes 46.8984 | val_loss 4.6895 | val_rouge1 0.2806 | val_rougeL 0.1485 | val_words 418.7500
+  best so far (epoch 8)
+epoch 9 | train_loss 4.7114 | minutes 52.9624 | val_loss 4.6874 | val_rouge1 0.2791 | val_rougeL 0.1509 | val_words 424.8750
+  best so far (epoch 9)
+epoch 10 | train_loss 4.7110 | minutes 59.0291 | val_loss 4.6863 | val_rouge1 0.3041 | val_rougeL 0.1558 | val_words 417.7500
+  best so far (epoch 10)
+VAL generation: rouge1 0.3334 | rouge2 0.0957 | rougeL 0.1724 | words_pred 410.4333 | words_ref 874.1000 | gen_seconds 323.5267 | n 30
+  example [6277]: : The appellant is a tenant of the premises in question. He was a tenant of a building and was not a tenant of his own house. He was an owner of the land in dispute. He was also a tenant of that premises. He was the owner of the premises. He had no right to be evicted from the premises. It was alleged that he was a tenant in the premises. On the other hand, he was not entitled to any compensation 
+test: 100 docs | words per summary mean 410 (min 249, max 443) | empty 0 | generation 17.9 min
+wrote /kaggle/working/p6runs/r7_prompt_biscale/r7_prompt_biscale_submission.zip
+done: r7_prompt_biscale | best val_loss 4.6863 | train 60.6 min | peak 3.8 GB | trainable 0.025M of 144.19M

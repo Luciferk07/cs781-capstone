@@ -1,0 +1,25 @@
+train 32305 cases {0: 18920, 1: 13385} | dev 994 | test 1517 | chunk_len 512 stride 412 | train max_chunks 4 select last | eval max_chunks 4 select last
+KD: teacher covers 8000 of 32305 train cases -> the student trains on those 8000
+KD: teacher logits for 8994 cases | T=2.0 alpha=0.5
+parameters: total 81.78M | trainable 81.775M (100.00%)
+class weights [0.851063829787234, 1.2121212121212122] | cases/epoch 4000 | steps/epoch 250 | epochs 5
+epoch 1 | train_loss 0.4161 | minutes 5.1707 | dev_macro_f1 0.5476 | dev_acc 0.5765 | dev_pred1 0.2475 | dev_tuned_f1 0.5856 | dev_auc 0.6057
+  best so far (epoch 1)
+epoch 2 | train_loss 0.3669 | minutes 10.9591 | dev_macro_f1 0.5772 | dev_acc 0.6046 | dev_pred1 0.2455 | dev_tuned_f1 0.6337 | dev_auc 0.6734
+  best so far (epoch 2)
+epoch 3 | train_loss 0.3204 | minutes 16.7192 | dev_macro_f1 0.5649 | dev_acc 0.6056 | dev_pred1 0.1942 | dev_tuned_f1 0.6389 | dev_auc 0.6787
+  best so far (epoch 3)
+epoch 4 | train_loss 0.3030 | minutes 22.4765 | dev_macro_f1 0.5553 | dev_acc 0.6046 | dev_pred1 0.1670 | dev_tuned_f1 0.6318 | dev_auc 0.6663
+epoch 5 | train_loss 0.2677 | minutes 28.1936 | dev_macro_f1 0.5858 | dev_acc 0.6177 | dev_pred1 0.2223 | dev_tuned_f1 0.6397 | dev_auc 0.6886
+  best so far (epoch 5)
+BEST on dev (argmax) macro-F1 0.5858 | macro-P 0.6702 | macro-R 0.6177 | acc 0.6177 | n 994
+  class 0: F1 0.701  P 0.576  R 0.895  (support 497, predicted 773)
+  class 1: F1 0.471  P 0.765  R 0.340  (support 497, predicted 221)
+  confusion [gold][pred]: [[445, 52], [328, 169]]
+BEST on dev (threshold P(1) >= 0.2793, tuned on dev) macro-F1 0.6397 | macro-P 0.6400 | macro-R 0.6398 | acc 0.6398 | n 994
+  class 0: F1 0.634  P 0.644  R 0.624  (support 497, predicted 481)
+  class 1: F1 0.646  P 0.635  R 0.656  (support 497, predicted 513)
+  confusion [gold][pred]: [[310, 187], [171, 326]]
+test: 1517 cases | predicted {0: 707, 1: 810} | infer 37s
+wrote /kaggle/working/p4runs/r6_kd_student/r6_kd_student_submission.zip
+done: r6_kd_student | best dev macro-F1 0.6397 | train 28.6 min | peak 1.9 GB | trainable 81.775M of 81.78M

@@ -1,0 +1,99 @@
+\begin{table}[H]
+\centering\small
+\caption{Phase 2 (L-NER) runs: local validation macro-F1/P/R (strict spans), decoding of the BIO tags, training minutes and Codabench score. Rows ending in \texttt{\_viterbi} re-decode a trained run's weights with Viterbi.}
+\label{tab:p2}
+\resizebox{\linewidth}{!}{\begin{tabular}{lllcccccc}
+\toprule
+\textbf{Run} & \textbf{Technique / backbone} & \textbf{Trainable / total} & \textbf{Decode} & \textbf{Val F1} & \textbf{Val P} & \textbf{Val R} & \textbf{Min} & \textbf{Codabench} \\
+\midrule
+\texttt{prefixlm\_lorma\_viterbi} & LoRMA ($r$=16) / Prefix-LM & 2.67M / 112.3M & viterbi & 0.5328 & 0.5513 & 0.5303 & 0.0 & \textbf{0.5126} \\
+\texttt{kd\_student} & KD student (8 layers) / Bi-Scale & 89.70M / 89.7M & viterbi & 0.5123 & 0.5309 & 0.5071 & 5.2 & 0.4607 \\
+\texttt{prefixlm\_bitfit} & BitFit / Prefix-LM & 0.12M / 109.7M & viterbi & 0.5079 & 0.5232 & 0.5093 & 7.3 & 0.4440 \\
+\texttt{biscale\_full\_viterbi} & full FT / Bi-Scale & 149.49M / 149.5M & viterbi & 0.4942 & 0.5093 & 0.4887 & 0.0 & 0.4933 (failed) \\
+\texttt{arch4\_adapter\_viterbi} & Houlsby adapter (64) / Retention & 7.11M / 116.7M & viterbi & 0.4648 & 0.4902 & 0.4574 & 0.0 & 0.4619 \\
+\texttt{prefixlm\_lorma} & LoRMA ($r$=16) / Prefix-LM & 2.67M / 112.3M & lenient & 0.4377 & 0.4064 & 0.4862 & 9.3 & 0.4036 \\
+\texttt{biscale\_full} & full FT / Bi-Scale & 149.49M / 149.5M & lenient & 0.4323 & 0.4142 & 0.4648 & 10.5 & -- \\
+\texttt{arch4\_adapter} & Houlsby adapter (64) / Retention & 7.11M / 116.7M & lenient & 0.3642 & 0.3422 & 0.4002 & 7.2 & -- \\
+\texttt{encdec\_lora\_viterbi} & LoRA ($r$=16) / Enc--dec & 1.20M / 68.3M & viterbi & 0.1828 & 0.2221 & 0.1902 & 0.0 & -- \\
+\texttt{encdec\_lora} & LoRA ($r$=16) / Enc--dec & 1.20M / 68.3M & lenient & 0.1236 & 0.1217 & 0.1578 & 3.9 & 0.1181 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{Phase 3 (rhetorical roles) runs: local dev macro-F1 (both domains pooled, CL, IT) and Codabench score.}
+\label{tab:p3}
+\resizebox{\linewidth}{!}{\begin{tabular}{lllccccc}
+\toprule
+\textbf{Run} & \textbf{Technique / backbone} & \textbf{Trainable / total} & \textbf{Dev comb.} & \textbf{Dev CL} & \textbf{Dev IT} & \textbf{Min} & \textbf{Codabench} \\
+\midrule
+\texttt{r3\_rslora\_arch4} & rsLoRA ($r$=32) / Retention & 5.12M / 114.7M & 0.4268 & 0.3459 & 0.4606 & 29.0 & 0.4489 \\
+\texttt{r1\_lorma\_prefixlm} & LoRMA ($r$=16) / Prefix-LM & 3.15M / 112.8M & 0.4196 & 0.3704 & 0.4202 & 25.4 & \textbf{0.4941} \\
+\texttt{r6\_kd\_student} & KD student (8 layers) / Prefix-LM & 81.78M / 81.8M & 0.3860 & 0.3237 & 0.3991 & 19.5 & 0.4536 \\
+\texttt{r4\_prompt\_biscale} & prompt tuning (32) / Bi-Scale & 0.72M / 144.9M & 0.3579 & 0.3128 & 0.3660 & 30.1 & 0.4067 \\
+\texttt{r2\_lora\_encdec} & LoRA ($r$=16) / Enc--dec & 1.68M / 68.8M & 0.2768 & 0.2628 & 0.2541 & 12.5 & 0.3142 \\
+\texttt{r5\_prefix\_encdec} & prefix tuning (16) / Enc--dec & 0.64M / 67.7M & 0.1965 & 0.1653 & 0.2064 & 9.2 & 0.2107 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{Phase 4 (CJPE) runs: local dev macro-F1 with the threshold tuned on dev and with argmax, the threshold, and Codabench score. The last four runs have no local log in our backup, so only their Codabench scores are shown.}
+\label{tab:p4}
+\resizebox{\linewidth}{!}{\begin{tabular}{lllccccc}
+\toprule
+\textbf{Run} & \textbf{Technique / backbone} & \textbf{Trainable / total} & \textbf{Dev (thr.)} & \textbf{Dev (argmax)} & \textbf{Thr.} & \textbf{Min} & \textbf{Codabench} \\
+\midrule
+\texttt{r3\_partial\_arch4} & partial FT (top 3) / Retention & 29.03M / 110.3M & 0.6467 & 0.5999 & 0.432 & 23.5 & 0.6123 \\
+\texttt{r6\_kd\_student} & KD student (8 layers) / Prefix-LM & 81.78M / 81.8M & 0.6397 & 0.5858 & 0.279 & 28.6 & \textbf{0.6224} \\
+\texttt{r7\_full\_prefixlm} & full FT / Prefix-LM & 110.13M / 110.1M & 0.6113 & 0.4071 & 0.325 & 51.4 & 0.5658 \\
+\texttt{r5\_bitfit\_prefixlm} & BitFit / Prefix-LM & 0.60M / 110.1M & 0.5842 & 0.5794 & 0.504 & 51.2 & 0.5477 \\
+\texttt{r4\_adapter\_biscale} & Houlsby adapter (64) / Bi-Scale & 3.86M / 148.0M & 0.3867 & 0.3333 & 0.477 & 48.3 & 0.3915 \\
+\texttt{r2b\_full\_encdec\_lc} & full FT / Enc--dec (\texttt{\_lc} variant) & -- & -- & -- & -- & -- & 0.5563 \\
+\texttt{r2\_full\_encdec} & full FT / Enc--dec & -- & -- & -- & -- & -- & 0.5568 \\
+\texttt{r1b\_lorma\_prefixlm\_lc} & LoRMA ($r$=16) / Prefix-LM (\texttt{\_lc} variant) & -- & -- & -- & -- & -- & 0.4740 \\
+\texttt{r1\_lorma\_prefixlm} & LoRMA ($r$=16) / Prefix-LM & -- & -- & -- & -- & -- & 0.4146 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{Phase 5 (LSI) runs: local dev macro/micro-F1 with per-statute thresholds, statutes predicted per test document, and Codabench score.}
+\label{tab:p5}
+\resizebox{\linewidth}{!}{\begin{tabular}{lllccccc}
+\toprule
+\textbf{Run} & \textbf{Technique / backbone} & \textbf{Trainable / total} & \textbf{Dev macro} & \textbf{Dev micro} & \textbf{Stat./doc} & \textbf{Min} & \textbf{Codabench} \\
+\midrule
+\texttt{r8\_full\_prefixlm} & full FT / Prefix-LM & 110.08M / 110.1M & 0.3788 & 0.4711 & 5.01 & 83.7 & \textbf{0.3582} \\
+\texttt{r6\_kd\_student} & KD student (8 layers) / Prefix-LM & 81.73M / 81.7M & 0.3643 & 0.4577 & 5.22 & 61.0 & 0.3531 \\
+\texttt{r1\_lorma\_prefixlm} & LoRMA ($r$=16) / Prefix-LM & 3.10M / 112.7M & 0.3569 & 0.4481 & 5.49 & 87.6 & 0.3433 \\
+\texttt{r3\_partial\_arch4} & partial FT (top 3) / Retention & 29.18M / 110.4M & 0.3533 & 0.4493 & 5.42 & 56.6 & 0.3334 \\
+\texttt{r7\_prefix\_prefixlm} & prefix tuning (16) / Prefix-LM & 0.74M / 110.4M & 0.3159 & 0.4064 & 6.29 & 60.1 & 0.3017 \\
+\texttt{r4\_adapter\_biscale} & Houlsby adapter (64) / Bi-Scale & 4.01M / 148.2M & 0.3092 & 0.4013 & 6.59 & 90.7 & 0.2948 \\
+\texttt{r2\_full\_encdec} & full FT / Enc--dec & 67.55M / 67.6M & 0.1828 & 0.2326 & 12.38 & 41.8 & 0.1698 \\
+\texttt{r5\_prompt\_encdec} & prompt tuning (32) / Enc--dec & 0.47M / 67.6M & 0.1105 & 0.1401 & 23.37 & 37.9 & 0.1007 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{Phase 6 (summarization) runs: ROUGE on 30 held-out training documents, mean summary length in words (references: 874), and Codabench BERTScore F1.}
+\label{tab:p6}
+\resizebox{\linewidth}{!}{\begin{tabular}{lllcccccc}
+\toprule
+\textbf{Run} & \textbf{Technique / backbone} & \textbf{Trainable / total} & \textbf{R-1} & \textbf{R-2} & \textbf{R-L} & \textbf{Words} & \textbf{Min} & \textbf{Codabench} \\
+\midrule
+\texttt{r2\_lora\_prefixlm} & LoRA ($r$=16) / Prefix-LM & 2.36M / 112.0M & 0.3874 & 0.1587 & 0.2065 & 331 & 39.3 & \textbf{0.8333} \\
+\texttt{r5\_prefix\_prefixlm} & prefix tuning (16) / Prefix-LM & 0.29M / 109.9M & 0.3645 & 0.1377 & 0.1901 & 334 & 30.8 & 0.8299 \\
+\texttt{r3\_houlsby\_arch4} & Houlsby adapter (64) / Retention & 1.78M / 111.4M & 0.3427 & 0.1199 & 0.1794 & 280 & 34.4 & 0.8293 \\
+\texttt{r7\_prompt\_biscale} & prompt tuning (32) / Bi-Scale & 0.02M / 144.2M & 0.3334 & 0.0957 & 0.1724 & 410 & 60.6 & 0.8074 \\
+\texttt{r6\_kd\_encdec\_student} & KD student (4+3 layers) / Enc--dec & 81.29M / 81.3M & 0.2972 & 0.0744 & 0.1589 & 288 & 30.0 & 0.8153 \\
+\texttt{r1\_lorma\_encdec} & LoRMA ($r$=16) / Enc--dec & 2.92M / 117.3M & 0.2958 & 0.0755 & 0.1606 & 294 & 44.0 & 0.8155 \\
+\texttt{r4\_pfeiffer\_encdec} & Pfeiffer adapter (128) / Enc--dec & 2.17M / 116.5M & 0.2908 & 0.0749 & 0.1567 & 295 & 34.0 & 0.8119 \\
+\bottomrule
+\end{tabular}}
+\end{table}

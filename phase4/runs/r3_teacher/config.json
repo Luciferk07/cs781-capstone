@@ -1,0 +1,45 @@
+{
+ "run_name": "r3_teacher",
+ "out_dir": "/kaggle/working/p4runs/r3_teacher",
+ "model_module": "cj_model",
+ "data": {
+  "tokenizer_dir": "tokenizer",
+  "train": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/93b0059be756c6c461f3a225de25aabda7d5f84a/Phase_4_CJPE/Train/train.json",
+  "dev": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/93b0059be756c6c461f3a225de25aabda7d5f84a/Phase_4_CJPE/Train/dev.json",
+  "test": "/root/.cache/huggingface/hub/datasets--Exploration-Lab--CS-781-Capstone/snapshots/93b0059be756c6c461f3a225de25aabda7d5f84a/Phase_4_CJPE/Test/test.json",
+  "cache_dir": "cj_cache",
+  "chunk_len": 512,
+  "stride": 412,
+  "max_chunks": 4,
+  "select": "last",
+  "eval_max_chunks": 4,
+  "eval_select": "last"
+ },
+ "model": {
+  "phase1": "arch4",
+  "method": "partial",
+  "unfreeze_layers": 3,
+  "pool": "mean_last",
+  "agg": "gru",
+  "head_hidden": 256,
+  "head_lr_mult": 2.0,
+  "backbone_lr_mult": 0.2
+ },
+ "train": {
+  "epochs": 0,
+  "epoch_cases": 4000,
+  "lr": 0.0005,
+  "batch_size": 4,
+  "grad_accum": 4,
+  "warmup_frac": 0.06,
+  "weight_decay": 0.01,
+  "schedule": "linear",
+  "class_weights": "balanced",
+  "threshold": "dev_tuned",
+  "max_minutes": 50
+ },
+ "kd": null,
+ "dump_teacher_logits": true,
+ "teacher_cases": 8000,
+ "load_trained": "/kaggle/working/p4runs/r3_partial_arch4/r3_partial_arch4_trained_params.pt"
+}

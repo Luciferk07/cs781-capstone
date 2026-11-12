@@ -1,0 +1,16 @@
+train 32305 cases {0: 18920, 1: 13385} | dev 994 | test 1517 | chunk_len 512 stride 412 | train max_chunks 4 select last | eval max_chunks 4 select last
+parameters: total 110.29M | trainable 29.034M (26.32%)
+loaded 54 trained tensors from /kaggle/working/p4runs/r3_partial_arch4/r3_partial_arch4_trained_params.pt
+class weights [0.8537262156448203, 1.2067612999626447] | cases/epoch 4000 | steps/epoch 250 | epochs 0
+BEST on dev (argmax) macro-F1 0.5999 | macro-P 0.6810 | macro-R 0.6288 | acc 0.6288 | n 994
+  class 0: F1 0.707  P 0.584  R 0.897  (support 497, predicted 764)
+  class 1: F1 0.492  P 0.778  R 0.360  (support 497, predicted 230)
+  confusion [gold][pred]: [[446, 51], [318, 179]]
+BEST on dev (threshold P(1) >= 0.4320, tuned on dev) macro-F1 0.6467 | macro-P 0.6585 | macro-R 0.6509 | acc 0.6509 | n 994
+  class 0: F1 0.685  P 0.624  R 0.761  (support 497, predicted 606)
+  class 1: F1 0.608  P 0.693  R 0.541  (support 497, predicted 388)
+  confusion [gold][pred]: [[378, 119], [228, 269]]
+teacher logits written for 8994 cases (5.8 min)
+test: 1517 cases | predicted {0: 917, 1: 600} | infer 67s
+wrote /kaggle/working/p4runs/r3_teacher/r3_teacher_submission.zip
+done: r3_teacher | best dev macro-F1 -1.0000 | train 0.0 min | peak 0.4 GB | trainable 29.034M of 110.29M

@@ -1,0 +1,23 @@
+lowercase: False (setting False; all-lowercase docs: train 0%, dev 0%, test 0%)
+train 42750 | dev 10181 | test 13019 | statutes 100 | positives per statute: min 272 median 679 max 11730 | statutes with 0 train positives 0 | chunk_len 512 stride 448 | train max_chunks 4 head_tail | eval max_chunks 4 head_tail
+parameters: total 67.58M | trainable 0.472M (0.70%)
+loss bce | pos_weight min 2.64 max 10.00 | cases/epoch 8000 | steps/epoch 500 | epochs 6
+epoch 1 | train_loss 0.6583 | minutes 3.9835 | dev_macro_f1 0.0387 | dev_micro_f1 0.1780 | dev_tuned_macro_f1 0.0747 | dev_tuned_t 0.0900 | dev_labels_per_doc 6.8454
+  best so far (epoch 1)
+epoch 2 | train_loss 0.6030 | minutes 10.3055 | dev_macro_f1 0.0470 | dev_micro_f1 0.1972 | dev_tuned_macro_f1 0.0753 | dev_tuned_t 0.0900 | dev_labels_per_doc 7.2389
+  best so far (epoch 2)
+epoch 3 | train_loss 0.5974 | minutes 16.6354 | dev_macro_f1 0.0542 | dev_micro_f1 0.2248 | dev_tuned_macro_f1 0.0761 | dev_tuned_t 0.1200 | dev_labels_per_doc 9.0700
+  best so far (epoch 3)
+epoch 4 | train_loss 0.5927 | minutes 22.9413 | dev_macro_f1 0.0497 | dev_micro_f1 0.2221 | dev_tuned_macro_f1 0.0766 | dev_tuned_t 0.1000 | dev_labels_per_doc 5.1278
+  best so far (epoch 4)
+epoch 5 | train_loss 0.5929 | minutes 29.2566 | dev_macro_f1 0.0600 | dev_micro_f1 0.2315 | dev_tuned_macro_f1 0.0774 | dev_tuned_t 0.1000 | dev_labels_per_doc 8.3690
+  best so far (epoch 5)
+epoch 6 | train_loss 0.5866 | minutes 35.5533 | dev_macro_f1 0.0608 | dev_micro_f1 0.2369 | dev_tuned_macro_f1 0.0775 | dev_tuned_t 0.3100 | dev_labels_per_doc 7.3184
+  best so far (epoch 6)
+BEST on dev (threshold 0.5) macro-F1 (labels in gold) 0.0608 [100 labels] | macro-F1 (all labels) 0.0608 | micro-F1 0.2369 (P 0.182 R 0.340) | subset acc 0.0028 | labels/doc pred 7.32 gold 3.92 | docs with no prediction 0 | n 10181
+BEST on dev (global threshold 0.31, tuned on dev) macro-F1 (labels in gold) 0.0775 [100 labels] | macro-F1 (all labels) 0.0775 | micro-F1 0.1967 (P 0.115 R 0.671) | subset acc 0.0000 | labels/doc pred 22.77 gold 3.92 | docs with no prediction 0 | n 10181
+BEST on dev (per-statute thresholds, tuned on dev) macro-F1 (labels in gold) 0.1105 [100 labels] | macro-F1 (all labels) 0.1105 | micro-F1 0.1401 (P 0.082 R 0.491) | subset acc 0.0000 | labels/doc pred 23.56 gold 3.92 | docs with no prediction 0 | n 10181
+  lowest-F1 statutes on dev (F1, id, support): (0.01, 84, 68), (0.02, 50, 80), (0.02, 74, 80), (0.02, 2, 98), (0.02, 27, 83), (0.02, 4, 84), (0.02, 65, 105), (0.02, 15, 84)
+test: 13019 docs | statutes per doc 23.37 | docs with none 0 | infer 176s
+wrote /kaggle/working/p5runs/r5_prompt_encdec/r5_prompt_encdec_submission.zip
+done: r5_prompt_encdec | best dev dev_tuned_macro_f1 0.0775 | train 37.9 min | peak 1.6 GB | trainable 0.472M of 67.58M

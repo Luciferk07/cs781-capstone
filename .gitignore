@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.pt
+*.bin
+*.safetensors
+report/source/*.aux
+report/source/*.log
+report/source/*.out
+report/source/*.bbl
+report/source/*.blg
+report/source/*.fls
+report/source/*.fdb_latexmk

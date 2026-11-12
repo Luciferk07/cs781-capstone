@@ -1,0 +1,70 @@
+labels 13 | train docs 80 (train; CL,IT) | dev docs 10 | test docs 10 | mode context window 512 sep Ċ
+parameters: total 114.72M | trainable 5.117M (4.46%)
+train windows 3130 | steps/epoch 392 | select best by dev combined
+epoch 1 | train_loss 1.5055 | minutes 1.6486 | dev_CL_f1 0.2534 | dev_IT_f1 0.3499 | dev_combined_f1 0.3137
+  best so far (epoch 1)
+epoch 2 | train_loss 1.0239 | minutes 3.5180 | dev_CL_f1 0.2875 | dev_IT_f1 0.3290 | dev_combined_f1 0.3317
+  best so far (epoch 2)
+epoch 3 | train_loss 0.7864 | minutes 5.4907 | dev_CL_f1 0.2597 | dev_IT_f1 0.3368 | dev_combined_f1 0.3242
+epoch 4 | train_loss 0.6216 | minutes 7.4597 | dev_CL_f1 0.3255 | dev_IT_f1 0.4235 | dev_combined_f1 0.4003
+  best so far (epoch 4)
+epoch 5 | train_loss 0.4762 | minutes 9.4310 | dev_CL_f1 0.3029 | dev_IT_f1 0.3921 | dev_combined_f1 0.3754
+epoch 6 | train_loss 0.3634 | minutes 11.4052 | dev_CL_f1 0.3180 | dev_IT_f1 0.4713 | dev_combined_f1 0.4012
+  best so far (epoch 6)
+epoch 7 | train_loss 0.2755 | minutes 13.3601 | dev_CL_f1 0.2819 | dev_IT_f1 0.3831 | dev_combined_f1 0.3778
+epoch 8 | train_loss 0.2136 | minutes 15.3109 | dev_CL_f1 0.2742 | dev_IT_f1 0.3385 | dev_combined_f1 0.3314
+epoch 9 | train_loss 0.1533 | minutes 17.2701 | dev_CL_f1 0.3449 | dev_IT_f1 0.3989 | dev_combined_f1 0.3986
+epoch 10 | train_loss 0.1194 | minutes 19.2284 | dev_CL_f1 0.3507 | dev_IT_f1 0.4243 | dev_combined_f1 0.4077
+  best so far (epoch 10)
+epoch 11 | train_loss 0.0622 | minutes 21.1778 | dev_CL_f1 0.3521 | dev_IT_f1 0.4502 | dev_combined_f1 0.4232
+  best so far (epoch 11)
+epoch 12 | train_loss 0.0387 | minutes 23.1136 | dev_CL_f1 0.3459 | dev_IT_f1 0.4606 | dev_combined_f1 0.4268
+  best so far (epoch 12)
+epoch 13 | train_loss 0.0189 | minutes 25.0470 | dev_CL_f1 0.3380 | dev_IT_f1 0.4296 | dev_combined_f1 0.4065
+epoch 14 | train_loss 0.0102 | minutes 26.9749 | dev_CL_f1 0.3512 | dev_IT_f1 0.4278 | dev_combined_f1 0.4151
+epoch 15 | train_loss 0.0047 | minutes 28.8920 | dev_CL_f1 0.3441 | dev_IT_f1 0.4329 | dev_combined_f1 0.4123
+BEST on dev [CL] macro-F1 0.3459 (labels present: 0.4088) | macro-P 0.4069 | macro-R 0.3485 | acc 0.4893 | n 1396
+  Fact                     F1 0.569  P 0.511  R 0.643  (support 249, predicted 313)
+  Issue                    F1 0.667  P 0.667  R 0.667  (support 3, predicted 3)
+  ArgumentPetitioner       F1 0.545  P 0.689  R 0.451  (support 344, predicted 225)
+  ArgumentRespondent       F1 0.383  P 0.779  R 0.254  (support 236, predicted 77)
+  Statute                  F1 0.745  P 0.864  R 0.655  (support 58, predicted 44)
+  Dissent                  F1 0.000  P 0.000  R 0.000  (support 0, predicted 0)
+  PrecedentReliedUpon      F1 0.339  P 0.271  R 0.451  (support 142, predicted 236)
+  PrecedentNotReliedUpon   F1 0.000  P 0.000  R 0.000  (support 0, predicted 3)
+  PrecedentOverruled       F1 0.000  P 0.000  R 0.000  (support 0, predicted 0)
+  RulingByLowerCourt       F1 0.261  P 0.692  R 0.161  (support 56, predicted 13)
+  RatioOfTheDecision       F1 0.499  P 0.410  R 0.639  (support 288, predicted 449)
+  RulingByPresentCourt     F1 0.489  P 0.407  R 0.611  (support 18, predicted 27)
+  None                     F1 0.000  P 0.000  R 0.000  (support 2, predicted 6)
+BEST on dev [IT] macro-F1 0.4606 (labels present: 0.5443) | macro-P 0.5740 | macro-R 0.4285 | acc 0.6126 | n 746
+  Fact                     F1 0.806  P 0.725  R 0.908  (support 195, predicted 244)
+  Issue                    F1 0.818  P 0.900  R 0.750  (support 12, predicted 10)
+  ArgumentPetitioner       F1 0.518  P 0.518  R 0.518  (support 56, predicted 56)
+  ArgumentRespondent       F1 0.286  P 1.000  R 0.167  (support 36, predicted 6)
+  Statute                  F1 0.738  P 0.927  R 0.613  (support 62, predicted 41)
+  Dissent                  F1 0.000  P 0.000  R 0.000  (support 0, predicted 0)
+  PrecedentReliedUpon      F1 0.514  P 0.467  R 0.571  (support 112, predicted 137)
+  PrecedentNotReliedUpon   F1 0.310  P 0.382  R 0.260  (support 50, predicted 34)
+  PrecedentOverruled       F1 0.000  P 0.000  R 0.000  (support 0, predicted 0)
+  RulingByLowerCourt       F1 0.563  P 0.800  R 0.435  (support 46, predicted 25)
+  RatioOfTheDecision       F1 0.587  P 0.503  R 0.704  (support 115, predicted 161)
+  RulingByPresentCourt     F1 0.500  P 0.706  R 0.387  (support 31, predicted 17)
+  None                     F1 0.348  P 0.533  R 0.258  (support 31, predicted 15)
+BEST on dev [combined] macro-F1 0.4268 (labels present: 0.5044) | macro-P 0.5070 | macro-R 0.4035 | acc 0.5322 | n 2142
+  Fact                     F1 0.673  P 0.605  R 0.759  (support 444, predicted 557)
+  Issue                    F1 0.786  P 0.846  R 0.733  (support 15, predicted 13)
+  ArgumentPetitioner       F1 0.540  P 0.655  R 0.460  (support 400, predicted 281)
+  ArgumentRespondent       F1 0.372  P 0.795  R 0.243  (support 272, predicted 83)
+  Statute                  F1 0.741  P 0.894  R 0.633  (support 120, predicted 85)
+  Dissent                  F1 0.000  P 0.000  R 0.000  (support 0, predicted 0)
+  PrecedentReliedUpon      F1 0.408  P 0.343  R 0.504  (support 254, predicted 373)
+  PrecedentNotReliedUpon   F1 0.299  P 0.351  R 0.260  (support 50, predicted 37)
+  PrecedentOverruled       F1 0.000  P 0.000  R 0.000  (support 0, predicted 0)
+  RulingByLowerCourt       F1 0.414  P 0.763  R 0.284  (support 102, predicted 38)
+  RatioOfTheDecision       F1 0.523  P 0.434  R 0.658  (support 403, predicted 610)
+  RulingByPresentCourt     F1 0.495  P 0.523  R 0.469  (support 49, predicted 44)
+  None                     F1 0.296  P 0.381  R 0.242  (support 33, predicted 21)
+test: 10 docs, 2197 sentences | predicted labels {'RatioOfTheDecision': 741, 'Fact': 394, 'PrecedentReliedUpon': 375, 'ArgumentPetitioner': 289, 'Statute': 155, 'RulingByLowerCourt': 101, 'None': 39, 'RulingByPresentCourt': 36, 'PrecedentNotReliedUpon': 34, 'ArgumentRespondent': 19, 'Issue': 12, 'Dissent': 2}
+wrote /kaggle/working/p3runs/r3_rslora_arch4/r3_rslora_arch4_submission.zip
+done: r3_rslora_arch4 | best dev combined macro-F1 0.4268 | train 29.0 min | peak 3.3 GB | trainable 5.117M of 114.72M

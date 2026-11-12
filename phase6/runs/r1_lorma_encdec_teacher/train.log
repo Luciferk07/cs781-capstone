@@ -1,0 +1,8 @@
+dropped 2 training documents with an empty summary: ['299', '4799']
+train pairs 6828 | val 200 | test 0 | doc tokens {'n': 7028, 'p10': 1581, 'p50': 3670, 'p90': 9107, 'p99': 28231, 'max': 162707} | summary tokens {'n': 7028, 'p10': 343, 'p50': 754, 'p90': 1790, 'p99': 5141, 'max': 32609} | max_src 1019 (head_tail) + sep 5 | max_tgt 896 | summaries longer than max_tgt: 38.9%
+parameters: total 117.29M | trainable 2.925M (2.49%)
+generation: cached (prefill/decode_step)
+loaded 172 trained tensors from /kaggle/working/p6runs/r1_lorma_encdec/r1_lorma_encdec_trained_params.pt
+cases/epoch 3000 | steps/epoch 188 | epochs 0 | select by val_loss | per-epoch generation on 8 val docs
+teacher summaries written for 800 training documents (7.4 min)
+done: r1_lorma_encdec_teacher | best val_loss nan | train 0.0 min | peak 0.5 GB | trainable 2.925M of 117.29M

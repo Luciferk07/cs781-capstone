@@ -1,0 +1,22 @@
+labels 12 | scheme BIO -> 25 tags | gold end is exclusive (8393 exclusive / 0 inclusive / 0 neither)
+train docs 63 | val docs 7 | test docs 35
+parameters: total 68.30M | trainable 1.199M (1.76%)
+loaded 50 trained tensors from /kaggle/working/p2runs/encdec_lora/encdec_lora_trained_params.pt
+train windows 1101 (window 512, stride 384) | overlapping gold entities not representable: 0
+BEST checkpoint on validation:
+strict macro-F1 0.1828 (over labels present: 0.1828) | macro-P 0.2221 | macro-R 0.1902
+  APP        F1 0.053  P 0.500  R 0.028  (tp 1, fp 1, fn 35, support 36)
+  RESP       F1 0.000  P 0.000  R 0.000  (tp 0, fp 1, fn 31, support 31)
+  A.COUNSEL  F1 0.000  P 0.000  R 0.000  (tp 0, fp 0, fn 16, support 16)
+  R.COUNSEL  F1 0.000  P 0.000  R 0.000  (tp 0, fp 0, fn 15, support 15)
+  JUDGE      F1 0.000  P 0.000  R 0.000  (tp 0, fp 0, fn 20, support 20)
+  WIT        F1 0.000  P 0.000  R 0.000  (tp 0, fp 1, fn 27, support 27)
+  AUTH       F1 0.062  P 0.068  R 0.058  (tp 4, fp 55, fn 65, support 69)
+  COURT      F1 0.749  P 0.691  R 0.817  (tp 85, fp 38, fn 19, support 104)
+  STAT       F1 0.236  P 0.397  R 0.168  (tp 23, fp 35, fn 114, support 137)
+  PREC       F1 0.062  P 0.056  R 0.069  (tp 6, fp 102, fn 81, support 87)
+  DATE       F1 0.713  P 0.621  R 0.837  (tp 87, fp 53, fn 17, support 104)
+  CASENO     F1 0.319  P 0.333  R 0.306  (tp 30, fp 60, fn 68, support 98)
+test: 3411 entities in 35 docs | per label {'PREC': 595, 'DATE': 854, 'STAT': 542, 'CASENO': 373, 'AUTH': 400, 'APP': 14, 'COURT': 584, 'R.COUNSEL': 4, 'RESP': 24, 'WIT': 20, 'A.COUNSEL': 1}
+wrote /kaggle/working/p2runs/encdec_lora_viterbi/encdec_lora_viterbi_submission.zip
+done: encdec_lora_viterbi | best val macro-F1 -1.0000 | train 0.0 min | peak 0.3 GB | trainable 1.199M of 68.30M

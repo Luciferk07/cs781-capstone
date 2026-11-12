@@ -1,0 +1,20 @@
+train 32305 cases {0: 18920, 1: 13385} | dev 994 | test 1517 | chunk_len 512 stride 412 | train max_chunks 4 select last | eval max_chunks 4 select last
+parameters: total 148.03M | trainable 3.864M (2.61%)
+class weights [0.8537262156448203, 1.2067612999626447] | cases/epoch 4000 | steps/epoch 250 | epochs 5
+epoch 1 | train_loss 0.7027 | minutes 8.5573 | dev_macro_f1 0.3333 | dev_acc 0.5000 | dev_pred1 0.0000
+  best so far (epoch 1)
+epoch 2 | train_loss 0.7002 | minutes 17.9984 | dev_macro_f1 0.3333 | dev_acc 0.5000 | dev_pred1 0.0000
+epoch 3 | train_loss 0.6981 | minutes 27.5469 | dev_macro_f1 0.3333 | dev_acc 0.5000 | dev_pred1 0.0000
+epoch 4 | train_loss 0.6938 | minutes 37.4013 | dev_macro_f1 0.3333 | dev_acc 0.5000 | dev_pred1 0.0000
+epoch 5 | train_loss 0.6945 | minutes 47.2575 | dev_macro_f1 0.3333 | dev_acc 0.5000 | dev_pred1 0.0000
+BEST on dev (argmax) macro-F1 0.3333 | macro-P 0.2500 | macro-R 0.5000 | acc 0.5000 | n 994
+  class 0: F1 0.667  P 0.500  R 1.000  (support 497, predicted 994)
+  class 1: F1 0.000  P 0.000  R 0.000  (support 497, predicted 0)
+  confusion [gold][pred]: [[497, 0], [497, 0]]
+BEST on dev (threshold P(1) >= 0.4771, tuned on dev) macro-F1 0.3867 | macro-P 0.5081 | macro-R 0.5020 | acc 0.5020 | n 994
+  class 0: F1 0.121  P 0.515  R 0.068  (support 497, predicted 66)
+  class 1: F1 0.653  P 0.501  R 0.936  (support 497, predicted 928)
+  confusion [gold][pred]: [[34, 463], [32, 465]]
+test: 1517 cases | predicted {1: 1408, 0: 109} | infer 96s
+wrote /kaggle/working/p4runs/r4_adapter_biscale/r4_adapter_biscale_submission.zip
+done: r4_adapter_biscale | best dev macro-F1 0.3333 | train 48.3 min | peak 5.6 GB | trainable 3.864M of 148.03M
