@@ -99,5 +99,4 @@ Phase-6 local evaluation optionally uses `bert-score`.
 
 ## LLM use
 
-Parts of the code (data loading, training/evaluation harnesses, notebooks) and of the documentation were written with
-Claude (Anthropic); see the LLM declaration in the report.
+see the LLM declaration in the report.
